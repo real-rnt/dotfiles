@@ -1,0 +1,17 @@
+import = [
+    "~/.config/alacritty/themes/themes/tokyo-night.toml"
+]
+
+[window]
+    decorations = "none"
+    padding.x = 12
+    padding.y = 12
+
+    opacity = 0.9
+    blur = true
+
+[font]
+
+    normal.family = "FiraCode Nerd Font"
+
+    size = 15
