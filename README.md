@@ -7,5 +7,5 @@
 </div>
 <hr>
 <div style="text-align: center;">
-  <img src="assets/neofetch-shot.png" alt="cava" />
+  <img src="assets/cavashowcase.png" alt="cava" />
 </div>
