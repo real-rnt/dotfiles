@@ -1,4 +1,7 @@
 <div style="text-align: center;">
+  <img src="assets/hyprshowcase.png" alt="hyprland" />
+</div>
+<div style="text-align: center;">
   <img src="assets/yokocho.png" alt="yokocho" />
 </div>
 <hr>
