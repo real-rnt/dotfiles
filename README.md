@@ -1,13 +1,10 @@
 # Setup:
 Arch linux + hyprland
-
 <div style="text-align: center;">
-  <img src="assets/hyprshowcase.png" alt="hyprland" />
+  <img src="assets/onepiece.png" alt="op" />
 </div>
 <div style="text-align: center;">
-    <video controls audio>
-       <source src="assets/hyprland.mp4" type="video/mp4" />
-    </video>
+  <img src="assets/hyprshowcase.png" alt="hyprland" />
 </div>
 <div style="text-align: center;">
   <img src="assets/yokocho.png" alt="yokocho" />
