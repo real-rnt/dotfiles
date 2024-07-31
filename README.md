@@ -1,5 +1,5 @@
 # Arch rice:
-Arch linux + hyprland
+Minimal and fast configuration: Arch linux + hyprland
 <div style="text-align: center;">
   <img src="assets/onepiece.png" alt="op" />
 </div>
@@ -15,4 +15,8 @@ Yazi
 Rofi
 <div style="text-align: center;">
   <img src="assets/rofi.png" alt="rofi" />
+</div>
+vscode
+<div style="text-align: center;">
+  <img src="assets/code.png" alt="code" />
 </div>

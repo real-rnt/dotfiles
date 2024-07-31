@@ -1,0 +1,6 @@
+$nokto: false;
+$eta: false;
+
+@import "../../common/colors"; // use gtk colors
+@import "../../common/drawing";
+@import "pad-osd-window";
