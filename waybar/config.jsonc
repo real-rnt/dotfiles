@@ -29,8 +29,25 @@
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "on-click": "activate"
-        //"format": "{icon}",
+        "on-click": "activate",
+        "format": "{icon}","persistent-workspaces": {
+"1": [],
+"2": [],
+"3": [],
+"4": []
+},
+"format-icons": {
+"1": "壹",
+"2": "貳",
+"3": "參",
+"4": "肆",
+"5": "五",
+"6": "六",
+"7": "七",
+"8": "八",
+"9": "九",
+"10": "拾"
+}
     },
 
     "tray": {

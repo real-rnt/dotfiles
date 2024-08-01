@@ -3,7 +3,7 @@
     border-radius: 0px;
     font-family: FiraCode Nerd Font, monospace;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 11px;
     min-height: 0;
 }
 
@@ -54,7 +54,7 @@ window#waybar {
     background: #1e1e2e;
     padding: 0px 10px;
     margin: 0px 0px;
-    margin-top: 5px;
+    margin-top: 1px;
     /* border: 1px solid #423564;  */
 }
 
@@ -86,8 +86,8 @@ window#waybar {
 
 #window {
     border-radius: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 67px;
+    margin-right: 53px;
 }
 
 #clock {
