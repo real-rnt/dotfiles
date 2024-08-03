@@ -3,13 +3,15 @@ Minimal and fast configuration: Arch linux + hyprland
 <div style="text-align: center;">
   <img src="assets/onepiece.png" alt="op" />
 </div>
+<hr>
+System info
 <div style="text-align: center;">
-  <img src="assets/yokocho.png" alt="yokocho" />
+  <img src="assets/neofetch.png" alt="neofetch" />
 </div>
 <hr>
 Yazi
 <div style="text-align: center;">
-  <img src="assets/yazishowcase.png" alt="yazishowcase" />
+  <img src="assets/yazi.png" alt="yazishowcase" />
 </div>
 <hr>
 Rofi
