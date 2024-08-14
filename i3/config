@@ -2,6 +2,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 exec --no-startup-id setxkbmap -layout us -variant intl
+exec --no-startup-id xset r rate 300 50
 
 set $mod Mod4
 
