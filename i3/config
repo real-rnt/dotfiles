@@ -179,5 +179,5 @@ bar {
 }
 
 # gaps between windows
-gaps inner 2
+gaps inner 5
 gaps outer 1
