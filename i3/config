@@ -4,7 +4,7 @@
 
 # set keyboard layout and xrate 
 exec --no-startup-id setxkbmap -layout us -variant intl
-exec --no-startup-id xset r rate 250 35
+exec --no-startup-id xset r rate 250 32
 
 # set super as $mod key
 set $mod Mod4
