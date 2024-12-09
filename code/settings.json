@@ -1,0 +1,78 @@
+{
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "python.defaultInterpreterPath": "/bin/python",
+    "git.autofetch": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+
+    // Personal
+    "editor.lineHeight": 1.4,
+    "explorer.compactFolders": false,
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "FiraCode Nerd Font",
+    "editor.fontLigatures": false,
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#ffffff",
+        "terminalCursor.foreground": "#ffffff"
+    },
+    "editor.fontSize": 16,
+    "workbench.layoutControl.enabled": false,
+    "workbench.startupEditor": "none",
+    "explorer.confirmDragAndDrop": false,
+    "editor.cursorBlinking": "solid",
+
+    // VIM
+    "vim.leader": " ",
+      "vim.normalModeKeyBindingsNonRecursive": [
+    // NAVIGATION
+    // switch b/w buffers
+    { "before": ["<S-tab>"], "commands": [":bprevious"] },
+    { "before": ["<tab>"], "commands": [":bnext"] },
+
+    //File tree
+    // {"before" : ["<leader>","e"], "commands" : ["workbench.view.explorer"]},
+
+    // splits
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+
+    // split navigation
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    // nice to have 
+    { "before": ["<C-w>"], "commands": [":q!"] },
+    { "before": ["<C-p>"], "commands": ["workbench.action.quickOpen"] }
+  ],
+
+  // Performance and clean UI
+  "window.menuBarVisibility": "hidden",
+  "editor.cursorStyle": "block",
+  "breadcrumbs.enabled": false,
+  "search.searchOnType": false,
+  "editor.codeLens": false,
+  "telemetry.telemetryLevel": "off",
+  "workbench.colorTheme": "default dark++",
+  "window.commandCenter": false,
+  "editor.lineNumbers": "relative",
+  "workbench.sideBar.location": "right",
+  "debug.enableStatusBarColor": false,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.vertical": "hidden",
+  "workbench.activityBar.location": "hidden",
+  "extensions.ignoreRecommendations": true,
+}
