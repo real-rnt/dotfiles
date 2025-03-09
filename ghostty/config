@@ -1,0 +1,19 @@
+# style
+theme = Dark Modern
+background-opacity = 0.8
+background-blur-radius = 20
+window-decoration = false
+window-padding-x = 8
+window-padding-y = 8
+
+# font
+font-family = "Fira Code"
+font-size = 16
+
+# features 
+mouse-hide-while-typing = true
+
+# cursor
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor

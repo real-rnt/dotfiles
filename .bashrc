@@ -22,3 +22,6 @@ alias la='ls -la'
 alias grep='grep --color=auto'
 
 PS1='[\u@\h \W]\$ '
+
+# zoxide
+eval "$(zoxide init --cmd cd bash)"
