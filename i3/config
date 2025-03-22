@@ -45,7 +45,7 @@ tiling_drag modifier titlebar
 for_window [class="^.*"] border pixel 0
 
 # start a terminal and yazi
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec ghostty
 bindsym $mod+e exec kitty -e yazi 
 
 # kill focused window

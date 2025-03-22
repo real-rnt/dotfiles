@@ -2,7 +2,7 @@
     "[python]": {
         "editor.formatOnType": true
     },
-    "python.defaultInterpreterPath": "/bin/python",
+    "python.defaultInterpreterPath": "C:\\Users\\renat\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
     "git.autofetch": true,
     "diffEditor.ignoreTrimWhitespace": false,
 
@@ -10,14 +10,14 @@
     "editor.lineHeight": 1.4,
     "explorer.compactFolders": false,
     "editor.minimap.enabled": false,
-    "editor.fontFamily": "FiraCode Nerd Font",
+    "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": false,
     "workbench.colorCustomizations": {
-        "editorCursor.foreground": "#ffffff",
-        "terminalCursor.foreground": "#ffffff"
+      "editorCursor.foreground": "#ffffff",
+      "terminalCursor.foreground": "#ffffff",
+      "terminal.background": "#00000000"
     },
     "editor.fontSize": 16,
-    "workbench.layoutControl.enabled": false,
     "workbench.startupEditor": "none",
     "explorer.confirmDragAndDrop": false,
     "editor.cursorBlinking": "solid",
@@ -58,21 +58,26 @@
     { "before": ["<C-w>"], "commands": [":q!"] },
     { "before": ["<C-p>"], "commands": ["workbench.action.quickOpen"] }
   ],
-
-  // Performance and clean UI
-  "window.menuBarVisibility": "hidden",
+  // optimizations
   "editor.cursorStyle": "block",
   "breadcrumbs.enabled": false,
   "search.searchOnType": false,
   "editor.codeLens": false,
   "telemetry.telemetryLevel": "off",
   "workbench.colorTheme": "default dark++",
-  "window.commandCenter": false,
   "editor.lineNumbers": "relative",
   "workbench.sideBar.location": "right",
   "debug.enableStatusBarColor": false,
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
-  "workbench.activityBar.location": "hidden",
   "extensions.ignoreRecommendations": true,
+  "explorer.confirmDelete": false,
+  "terminal.integrated.gpuAcceleration": "off",
+  "workbench.activityBar.location": "hidden",
+  "chat.commandCenter.enabled": false,
+  "window.titleBarStyle": "native",
+  "workbench.layoutControl.enabled": false,
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "toggle",
+  "security.workspace.trust.untrustedFiles": "open"
 }

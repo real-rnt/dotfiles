@@ -1,5 +1,5 @@
 # Arch rice:
-Minimal and fast configuration: Arch linux + hyprland
+Minimal and fast configuration: Arch linux + hyprland/i3/kde/dwm
 <div style="text-align: center;">
   <img src="assets/onepiece.png" alt="op" />
 </div>

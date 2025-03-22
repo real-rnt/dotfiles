@@ -1,0 +1,5 @@
+set zoom-min 3
+set zoom-max 50
+
+map i zoom in
+map o zoom out
