@@ -1,9 +1,5 @@
 # Arch rice:
 Minimal and fast configuration: Arch linux + hyprland/i3/kde/dwm
-<div style="text-align: center;">
-  <img src="assets/onepiece.png" alt="op" />
-</div>
-<hr>
 System info
 <div style="text-align: center;">
   <img src="assets/neofetch.png" alt="neofetch" />
@@ -14,11 +10,7 @@ Yazi
   <img src="assets/yazi.png" alt="yazishowcase" />
 </div>
 <hr>
-Rofi
+Desktop
 <div style="text-align: center;">
   <img src="assets/desktop.png" alt="desktop" />
-</div>
-vscode
-<div style="text-align: center;">
-  <img src="assets/code.png" alt="code" />
 </div>
