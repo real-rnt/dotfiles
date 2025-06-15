@@ -16,7 +16,7 @@ Yazi
 <hr>
 Rofi
 <div style="text-align: center;">
-  <img src="assets/rofi.png" alt="rofi" />
+  <img src="assets/desktop.png" alt="desktop" />
 </div>
 vscode
 <div style="text-align: center;">
