@@ -1,5 +1,6 @@
 # Arch rice:
 Minimal and fast configuration: Arch linux + hyprland/i3/kde/dwm
+<br>
 System info
 <div style="text-align: center;">
   <img src="assets/neofetch.png" alt="neofetch" />
