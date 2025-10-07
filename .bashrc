@@ -9,10 +9,10 @@
 alias sus='systemctl suspend'
 
 alias c='clear'
+alias f='yazi'
 
 alias p='sudo pacman'
 
-alias gp='cd /home/rnt/code/projects/'
 alias gh='history|grep'
 
 alias mkdir='mkdir -pv'
