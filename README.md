@@ -1,5 +1,5 @@
-# Arch rice:
-Minimal and fast configuration: Arch linux + hyprland/i3/kde/dwm
+# Arch linux customization:
+Minimal and fast configuration: Arch linux + hyprland/i3/kde
 <br>
 <hr>
 System info
@@ -15,4 +15,7 @@ Yazi
 Desktop
 <div style="text-align: center;">
   <img src="assets/desktop.png" alt="desktop" />
+</div>
+<div style="text-align: center;">
+  <img src="assets/simplicity.png" alt="simplicity" />
 </div>
