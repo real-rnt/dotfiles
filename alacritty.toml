@@ -5,7 +5,7 @@ opacity = 0.95
 padding.x = 10
 padding.y = 10
 
-decorations = "Full"
+decorations = "Full" #Full/None
 decorations_theme_variant = "Light" # "Dark"
 #startup_mode = "Maximized"
 
@@ -19,3 +19,4 @@ size = 15.0
 
 [cursor.style]
 shape = "Block"
+

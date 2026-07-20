@@ -1,5 +1,3 @@
-let mapleader =" "
-
 set number relativenumber
 set scrolloff=10
 set nowrap
