@@ -7,6 +7,22 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "edit_predictions": {
+    "allow_data_collection": "no"
+  },
+  "ui_font_weight": 550.0,
+  "buffer_font_weight": 400.0,
+  "mouse_wheel_zoom": false,
+  "icon_theme": {
+    "mode": "light",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme"
+  },
   "cli_default_open_behavior": "new_window",
   "disable_ai": true,
   "session": {
@@ -18,6 +34,7 @@
     "metrics": false
   },
   "project_panel": {
+    "dock": "left",
     "auto_fold_dirs": false
   },
   "base_keymap": "VSCode",
@@ -37,15 +54,23 @@
   },
   "cursor_shape": "block",
   "cursor_blink": false,
-  "buffer_font_family": "Hack",
+  "buffer_font_family": ".ZedMono",
   "buffer_font_features": {
     "calt": false
   },
-  "ui_font_size": 16,
+  "ui_font_size": 20.0,
   "buffer_font_size": 16.0,
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark",
+    "dark": "VSCode Dark Modern",
   },
+  "languages": {
+      "Python": {
+        "language_servers": ["ty", "ruff"]
+      },
+      "PHP": {
+        "language_servers": ["phpantom"]
+      }
+    }
 }
