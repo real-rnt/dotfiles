@@ -1,13 +1,13 @@
 [window]
 
-opacity = 0.95
+opacity = 0.9
 
 padding.x = 10
 padding.y = 10
 
 decorations = "Full" #Full/None
 decorations_theme_variant = "Light" # "Dark"
-#startup_mode = "Maximized"
+startup_mode = "Maximized"
 
 [window.dimensions]
 columns = 100
@@ -20,6 +20,9 @@ size = 12.0
 shape = "Block"
 
 [general]
-import = [
-    "~/.config/alacritty/themes/themes/alacritty_0_12.toml"
-]
+
+live_config_reload = true
+
+# import = [
+#     "~/.config/alacritty/themes/themes/alacritty_0_12.toml"
+# ]
