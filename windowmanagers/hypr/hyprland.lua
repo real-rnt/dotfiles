@@ -19,8 +19,8 @@ hl.monitor({
 ---------------------
 
 -- Set programs that you use
-local terminal    = "alacritty"
-local fileManager = "nautilus"
+local terminal    = "env GTK_IM_MODULE=simple ghostty --gtk-single-instance=false"
+local fileManager = "ghostty -e yazi"
 local menu        = "hyprlauncher"
 
 
@@ -29,9 +29,6 @@ local menu        = "hyprlauncher"
 -------------------
 hl.on("hyprland.start", function ()
     hl.exec_cmd("noctalia")
---   hl.exec_cmd(terminal)
---   hl.exec_cmd("nm-applet")
---   hl.exec_cmd("waybar & hyprpaper & firefox")
 end)
 
 -------------------------------
@@ -58,10 +55,10 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 -----------------------
 hl.config({
     general = {
-        gaps_in  = 4,
-        gaps_out = 8,
+        gaps_in  = 1,
+        gaps_out = 0,
 
-        border_size = 2,
+        border_size = 0,
 
         col = {
             active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
@@ -93,15 +90,15 @@ hl.config({
         },
 
         blur = {
-            enabled   = false,
-            size      = 2,
-            passes    = 2,
-            vibrancy  = 0.1696,
+            enabled   = true,
+            size      = 5,
+            passes    = 3,
+            vibrancy  = 0.696,
         },
     },
 
     animations = {
-        enabled = false,
+        enabled = true,
     },
 })
 
@@ -117,8 +114,8 @@ hl.curve("easy", { type = "spring", mass = 1, stiffness = 238.1191, dampening = 
 
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 4.1,  spring = "easy",         style = "popin 87%" })
+hl.animation({ leaf = "windows",       enabled = true,  speed = 1.79, spring = "easy" })
+hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 1.1,  spring = "easy",         style = "popin 87%" })
 hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 1.49, bezier = "linear",       style = "popin 87%" })
 hl.animation({ leaf = "fadeIn",        enabled = true,  speed = 1.73, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 1.46, bezier = "almostLinear" })
@@ -229,11 +226,6 @@ hl.device({
     name        = "beken-usb-gaming-mouse-2",
     sensitivity = -0.55,
 })
-hl.device({
-    name = "wireless-controller-touchpad",
-    enabled = true
-})
-
 
 ---------------------
 ---- KEYBINDINGS ----
@@ -362,6 +354,13 @@ hl.window_rule({
 
     move  = "20 monitor_h-120",
     float = true,
+
+        name = "noctalia-settings-tile",
+    match = {
+        class = "dev.noctalia.Noctalia",
+        title = "Noctalia Settings",
+    },
+    float = false,
 })
 
 

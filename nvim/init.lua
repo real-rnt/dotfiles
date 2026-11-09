@@ -6,8 +6,8 @@
 vim.opt.termguicolors = true
 vim.cmd.colorscheme("default")
 
--- TRASNPARENCY
-local function set_transparent() -- set UI component to transparent
+-- TRANSPARENCY: use the terminal background while preserving text colors.
+local function set_transparent()
 	local groups = {
 		"Normal",
 		"NormalNC",
@@ -15,19 +15,29 @@ local function set_transparent() -- set UI component to transparent
 		"NormalFloat",
 		"FloatBorder",
 		"SignColumn",
-		"StatusLine",
-		"StatusLineNC",
+		"LineNr",
+		"CursorLineNr",
+		"FoldColumn",
 		"TabLine",
 		"TabLineFill",
 		"TabLineSel",
 		"ColorColumn",
+		"NvimTreeNormal",
+		"NvimTreeNormalNC",
+		"NvimTreeEndOfBuffer",
 	}
-for _, g in ipairs(groups) do
-		vim.api.nvim_set_hl(0, g, { bg = "none" })
+	for _, g in ipairs(groups) do
+		local highlight = vim.api.nvim_get_hl(0, { name = g, link = false })
+		highlight.bg = nil
+		highlight.ctermbg = nil
+		vim.api.nvim_set_hl(0, g, highlight)
 	end
-	vim.api.nvim_set_hl(0, "TabLineFill", { bg = "none", fg = "#767676" })
 end
--- set_transparent()
+vim.api.nvim_create_autocmd("ColorScheme", {
+	group = vim.api.nvim_create_augroup("NvimTransparency", { clear = true }),
+	callback = set_transparent,
+})
+set_transparent()
 
 -- INTERFACE
 vim.opt.number = true
@@ -195,21 +205,53 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
--- wrap, linebreak and spellcheck on markdown and text files
+-- Wrap prose and keep spellcheck off inside the notes folder.
+local function is_notes_buffer(buf)
+	local notes_path = vim.fn.expand("~/Documents/rnt-second-brain/")
+	return vim.startswith(vim.api.nvim_buf_get_name(buf), notes_path)
+end
+
 vim.api.nvim_create_autocmd("FileType", {
-	group = augroup,
-	pattern = { "markdown", "text", "gitcommit" },
-	callback = function()
+	group = vim.api.nvim_create_augroup("ProseSettings", { clear = true }),
+	pattern = { "markdown", "vimwiki", "text", "gitcommit" },
+	callback = function(args)
 		vim.opt_local.wrap = true
 		vim.opt_local.linebreak = true
-		vim.opt_local.spell = true
+		vim.opt_local.spell = not is_notes_buffer(args.buf)
+	end,
+})
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	group = vim.api.nvim_create_augroup("NotesSpellcheck", { clear = true }),
+	callback = function(args)
+		if is_notes_buffer(args.buf) then
+			vim.opt_local.spell = false
+		end
 	end,
 })
 -- ============================================================================
 -- PLUGINS (vim.pack)
 -- ============================================================================
 
+-- Notes stay in Markdown so they can also be read outside Neovim.
+-- Vimwiki options must be set before the plugin loads.
+vim.g.vimwiki_list = {
+	{
+		path = vim.fn.expand("~/Documents/rnt-second-brain/"),
+		syntax = "markdown",
+		ext = ".md",
+		index = "index",
+		diary_rel_path = "diary/",
+		diary_index = "diary",
+		diary_header = "Diary",
+	},
+}
+vim.g.vimwiki_global_ext = 0
+vim.g.vimwiki_ext2syntax = vim.empty_dict()
+vim.treesitter.language.register("markdown", "vimwiki")
+
 vim.pack.add({
+	"https://github.com/vimwiki/vimwiki",
+	"https://github.com/3rd/image.nvim",
 	"https://www.github.com/echasnovski/mini.nvim",
 	"https://github.com/nvim-lualine/lualine.nvim",
 	"https://www.github.com/ibhagwan/fzf-lua",
@@ -254,6 +296,7 @@ local setup_treesitter = function()
 		"json",
 		"lua",
 		"markdown",
+		"markdown_inline",
 		"python",
 		"typescript",
 		"vue",
@@ -290,21 +333,31 @@ end
 
 setup_treesitter()
 
+-- Ghostty supports the Kitty graphics protocol; ImageMagick is used via CLI.
+require("image").setup({
+	backend = "kitty",
+	processor = "magick_cli",
+	integrations = {
+		markdown = {
+			enabled = true,
+			filetypes = { "markdown", "vimwiki" },
+			clear_in_insert_mode = true,
+			download_remote_images = true,
+		},
+	},
+	max_width_window_percentage = 90,
+	max_height_window_percentage = 50,
+	window_overlap_clear_enabled = true,
+})
+
+vim.keymap.set("n", "<leader>wn", "<cmd>VimwikiMakeDiaryNote<CR>", { desc = "Diário de hoje" })
+vim.keymap.set("n", "<leader>wi", "<cmd>VimwikiDiaryIndex<CR>", { desc = "Índice do diário" })
+vim.keymap.set("n", "<leader>i", require("notes_images").toggle, { desc = "Mostrar/ocultar imagens" })
+
 -- I DONT KNOW WHAT IS THIS
 require("ts_context_commentstring").setup({
 	enable_autocmd = false,
 })
-
-local function get_notes_path()
-  local os_release = vim.fn.system("cat /etc/os-release")
-  if os_release:match("Artix") then
-    return vim.fn.expand("~/Documents/Notes")
-  elseif os_release:match("Ubuntu") then
-    return "/mnt/c/Users/Rad/Documents/Notes"
-  else
-    error("Unsupported OS: no notes path configured")
-  end
-end
 
 -- NVIM TREE
 require("nvim-tree").setup({
@@ -583,7 +636,7 @@ require("blink.cmp").setup({
 	completion = {
 		menu = {
 			auto_show = function()
-				return vim.bo.filetype ~= "markdown"
+				return vim.bo.filetype ~= "markdown" and vim.bo.filetype ~= "vimwiki"
 			end,
 		},
 	},
